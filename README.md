@@ -64,3 +64,11 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+
+1. Anchored or pegged to usd
+Chainlink price feed 
+set a fucntion to exchange eth and btc to dollar
+2. Stability mechanism is algorithmic (Decentralised)
+3.Collateral :Exogenous(cryto)
+wETH ,wBTC   ERC20 version
