@@ -10,7 +10,7 @@ contract DeployVSC is Script {
     address[] public tokenAddresses;
     address[] public priceFeedAddresses;
 
-    function run() external returns (ViprStableCoin, VSCEngine) {
+    function run() external returns (ViprStableCoin, VSCEngine, HelperConfig) {
         HelperConfig helperConfig = new HelperConfig();
 
         (address wethUsdPriceFeed, address wbtcUsdPriceFeed, address weth, address wbtc, uint256 deployerKey) =
@@ -25,6 +25,6 @@ contract DeployVSC is Script {
 
         vsc.transferOwnership(address(engine));
         vm.stopBroadcast();
-        return (vsc, engine);
+        return (vsc, engine, helperConfig);
     }
 }
