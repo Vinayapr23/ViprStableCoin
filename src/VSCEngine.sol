@@ -235,11 +235,11 @@ contract VSCEngine is ReentrancyGuard {
         // If covering 100 DSC, we need to $100 of collateral
         uint256 tokenAmountFromDebtCovered = getTokenAmountFromUsd(collateral, debtToCover);
         // And give them a 10% bonus
-        // So we are giving the liquidator $110 of WETH for 100 DSC
+        // So we are giving the liquidator $110 of WETH for 100 VSC
         // We should implement a feature to liquidate in the event the protocol is insolvent
         // And sweep extra amounts into a treasury
         uint256 bonusCollateral = (tokenAmountFromDebtCovered * LIQUIDATION_BONUS) / LIQUIDATION_PRECISION;
-        // Burn DSC equal to debtToCover
+        // Burn VSC equal to debtToCover
         // Figure out how much collateral to recover based on how much burnt
         _redeemCollateral(collateral, tokenAmountFromDebtCovered + bonusCollateral, user, msg.sender);
         _burnVsc(debtToCover, user, msg.sender);
@@ -254,9 +254,9 @@ contract VSCEngine is ReentrancyGuard {
 
     function getHealthFactor() external view {}
 
-    ////////////////////////////////////////////
-    //      Private & Internal View functions  //
-    ////////////////////////////////////////////
+    ///////////////////
+    // Private Functions
+    ///////////////////
 
     function _burnVsc(uint256 amountVscToBurn, address onBehalfOf, address vscFrom) private {
         s_VSCMinted[onBehalfOf] -= amountVscToBurn;
@@ -279,6 +279,10 @@ contract VSCEngine is ReentrancyGuard {
             revert VSCEngine__TransferFailed();
         }
     }
+
+    ////////////////////////////////////////////
+    //      Private & Internal View functions  //
+    ////////////////////////////////////////////
 
     function _getAccountInformation(address user)
         private
