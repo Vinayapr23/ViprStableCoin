@@ -27,8 +27,8 @@ This system is inspired by MakerDAO's DSS system and Cryfin:
 
 The contracts have been deployed on the Sepolia testnet. Below are the contract addresses for reference:
 
-- **Vipr Stablecoin (VSC) Contract**: [View on Etherscan](https://sepolia.etherscan.io/address/0x346E008Df62609E40C46bbF549Ec4848348157eb)
-- **VSC Engine Contract**: [View on Etherscan](https://sepolia.etherscan.io/address/0x8beb8fe513ff3f15571c0E8cAa36B4d1cbe5e29d)
+- **Vipr Stablecoin (VSC) Contract**: [View on Etherscan](https://sepolia.etherscan.io/address/0x8beb8fe513ff3f15571c0E8cAa36B4d1cbe5e29d)
+- **VSC Engine Contract**: [View on Etherscan](https://sepolia.etherscan.io/address/0x346E008Df62609E40C46bbF549Ec4848348157eb)
 
 You can interact with these contracts on Sepolia using your Ethereum wallet or through a script.
 
@@ -43,7 +43,7 @@ You can interact with these contracts on Sepolia using your Ethereum wallet or t
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/ViprStableCoin.git
+git clone https://github.com/Vinayapr23/ViprStableCoin.git
 cd ViprStableCoin
 make install
 ```
